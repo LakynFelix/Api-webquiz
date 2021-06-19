@@ -36,11 +36,4 @@ const questions = [
              ]
 
     
-                  //              question: 'Who made this test',
-                     //         answers: [
-                     //           { text: 'Reggie', correct: true },
-                       //         { text: 'The professor', correct: false },
-                         //       { text: 'Some rando on stack overflow ', correct: false },
-                           //     { text: 'Some student I paid', correct: false }
-                             //   ]
-                        
+        
