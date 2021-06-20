@@ -1,99 +1,134 @@
-const start= document.getElementById('start');
-const startgame= document.getElementById("startgame");
-
+const start = document.getElementById('start');
+const startgame = document.getElementById("startgame");
 const nextButton = document.getElementById('next-btn');
 const questionsContainerEl = document.getElementById('questionsCon');
-
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-btns')
-
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-btns');
 var score = 0;
-
 // Start Game Function
+start.addEventListener('click', startgame())
+// Question array
+const questions = [
+    {
+        question: 'Commonly used data types DO NOT include: _______.',
+        answers: [
+            { text: 'strings', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'alerts', correct: true },
+            { text: 'numbers', correct: false },
+        ]
+    },
+    {
+        question: 'The condition in an if/else statement is enclosed within ________.',
+        answers: [
+            { text: 'quotes', correct: false },
+            { text: 'curle brackets', correct: false },
+            { text: 'parentheses', correct: true },
+            { text: 'square brackets', correct: false }
+        ]
+    },
+    {
+        question: 'Arrays in Java Script are used to store _________.',
+        answers: [
+            { text: 'numbers and strings', correct: false },
+            { text: 'other arrays', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'all of the above', correct: true }
+        ]
+    },
+    {
+        question: 'String values must be enclosed within ________ when being assigned to variables.',
+        answers: [
+            { text: 'commas', correct: false },
+            { text: 'curly brackets', correct: false },
+            { text: 'quotes', correct: true },
+            { text: 'parentheses', correct: false }
+        ]
+    },
+    {
+        question: 'A useful tool for debugging during development for printing content to the debugger is _______',
+        answers: [
+            { text: 'GitBash/Terminal', correct: false },
+            { text: 'console', correct: true },
+            { text: 'Java Script', correct: false },
+            { text: 'for loops', correct: false }
+        ]
+    }
+];
 
+ /* start quiz */
+ function startQuiz() {
+ 
+    startarea.classList.add('hide');
+    questionsRandom = question.sort(() => Math.random() - .5);
+    questionsContainerEl.classList.remove('hide');
+    currentQuestionsIndex = 0;
+    nextQuestion();
+    nextButton.classList.remove('hide')
 
-start.addEventListener('click', startgame() {
-   
+    for(var i = 0; i < question.length; i++) {
+        console.log(question[2].question)
+ console.log(questions[2].answer[0].text)
+ console.log(questions[2].answer[1].text)
+ console.log(questions[2].answer[2].text)
+ console.log(questions[2].answer[3].text)
+ console.log(questions[2].answer[4].text)
+ console.log(questions[2].answer[5].text)
+  
+      //  console.log(question[i]  + answer [0]);
+      }
+      endQuiz();
 }
+
+
+
+
+// start time section // 
+const startimer 
+ const gametime = "2:00min";
  
 
 
-// Question array
-
-const questions = [
-{
-        question1: "Which one of the following is not a JavaScript Data Type?"
-        answers: ["Number","wrong"],
-                 ["String, wrong"],
-                ["Bolean","right"],
-              ["All of the Above","wrong"]
-
-        question2: "How do you call a function named myFunction?"
-        answers:['Function.myFunction',"wrong"],
-         ["myFunction()","right" ],
-         ["call myFunction()", "wrong"],
-         ["call myFunction myFunction()", "wrong"]        
-        
-             quesion3: "Which of the following is true about variable naming conventions in JavaScript?"
-             answers: ["You should not use any of the JavaScript reserved keyword as variable name","wrong" ],
-                      ["JavaScript variable names should not start with a numeral (0-9)","wrong"],
-                      ["Both of the above" , "right"],
-                      ["None of the above", "wrong"]
-                         
-                        
-             question4: "Which of the following function of Number object defines how many total digits to display of a number?"
-             answers:["toFixed()","wrong"],
-             ["toExponential()", "wrong"],
-             [" toPrecision()","right"],
-             ["toLocaleString()","wrong"]
-              
-             question5: "Which of the following function of String object causes a string to be italic, as if it were in an <i> tag?"
-             answers: ["fixed()","wrong"],
-                 ["fontcolor()","wrong"],
-                 ["fontsize()","wrong"],
-                 ["italics()","right"]
-                
-             question6: "Which built-in method adds one or more elements to the end of an array and returns the new length of the array?"
-             answers:["push()","right"],
-                 ["last()","wrong"],
-                 ["put()","wrong"],
-                 ["None of the above","wrong"]
- }
-   ]
+// End time //
 
 
+if (startimer === 0) {
+    console.log(" Time is up");
+    elseif 
+        console.log(" Your Time Remaining is"+ "time");
+      }
 
 
-// Choose Answer
-function answers
-// check Answer
+//end quiz //
+var endQuiz = function() {
+    window.alert("The game has now ended. Let's see how you did!");
+  };
+ 
+// make questions
+// make answers
+// check answer
+// set local storage
+// get local storage
+// make high scores
+// clear high scores
+// -----------------------------------------*/
 
-// Timer
-
-function timer (){
-
-}
-
-
-// Loop over every question object
+// Loop questions 
 for (var i = 0; i < questions.length; i++) {
-    // Display current question to user and ask OK/Cancel
-    var answer = confirm(questions[i].q);
+
+  var answer = confirm(questions[i].question);
   
-    // Compare answers
-    if (
-      (answer === right && questions[i].answers === "right") ||
-      (answer === wrong && questions[i].answers === "wrong")
-    ) {
-      // Increase score
-      score++;
-      // Alert the user
-      alert('Correct!');
-    } else {
-      alert('Wrong!');
-    }
+  if (
+    (answer === right && questions[i].answers === "right") ||
+    (answer === wrong && questions[i].answers === "wrong")
+  ) {
+    // Increase score
+    score++;
+    // Alert the user
+    alert('Correct!');
+  } else {
+    alert('Wrong!');
   }
-  
-  // Show total at end
-  alert('You got ' + score + '/' + questions.length);
-  
+}
+// Show total at end
+alert('You got ' + score + '/' + questions.length);
