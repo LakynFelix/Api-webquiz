@@ -5,7 +5,7 @@ const nextButton = document.getElementById('next-btn');
 const questionsContainerEl = document.getElementById('questionsCon');
 
 const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const answerButtonsElement = document.getElementById('answer-btns')
 
 var score = 0;
 
