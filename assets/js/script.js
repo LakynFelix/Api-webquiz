@@ -64,35 +64,29 @@ const questions = [
 // Start Game Function
 start.addEventListener("click", startQuiz())
 
- /* start quiz */
-//  function startQuiz() {
-//     startarea.classList.add("hide");
-//     questionsRandom = question.sort(() => Math.random() - .5);
-//     questionsContainerEl.classList.remove("hide");
-//     currentQuestionsIndex = 0;
-//     nextQuestion();
-//     nextButton.classList.remove("hide")
+//  /* start quiz */
+  function startQuiz() {
+     startarea.classList.add("hide");
+     questionsRandom = question.sort(() => Math.random() - .5);
+     questionContainerEl.classList.remove("hide");
+     currentQuestionsIndex = 0;
+     nextQuestion();
+     nextButton.classList.remove("hide")
  
-//     for(var i = 0; i < question.length; i++) {
-//         console.log(question[2].question)
-//  console.log(question[2].answer[0].text)
-//  console.log(question[2].answer[1].text)
-//  console.log(question[2].answer[2].text)
-//  console.log(question[2].answer[3].text)
-//  console.log(question[2].answer[4].text)
-//  console.log(question[2].answer[5].text)
-//     }
-      //  console.log(question[i]  + answer [0]);
-    //   }
-    //   endQuiz();
+     for(var i = 0; i < question.length; i++) {
+        console.log(question[2].question)
+  console.log(question[2].answer[0].text)
+  console.log(question[2].answer[1].text)
+  console.log(question[2].answer[2].text)
+  console.log(question[2].answer[3].text)
+  console.log(question[2].answer[4].text)
+  console.log(question[2].answer[5].text)
+     }
+ console.log(question[i]  + answer [0]);
+   }
+  endQuiz();
 
       start.addEventListener("click",startGame);
-
- 
-     
-
-
-
 
 // start time section // 
 function startTimer(duration, display) {
@@ -110,7 +104,7 @@ function startTimer(duration, display) {
             timer = duration;
         }
         if(seconds === 0) {
-            alert(" Your Game Over!")
+            alert(" Your Time is up!")
         }
     }, 1000);
 }
@@ -157,7 +151,6 @@ if (question === "right") {
     console.log("Sorry Incorrect");
   }
   
-
 // set local storage
 
 function showQuestion(question) {
@@ -179,16 +172,8 @@ function showQuestion(question) {
 var playerName = function() {
     var name = "";
 }
-var highScore = function() {
-  
 
-  var highScore = Math.floor(Math.random() 
-
-  return hScore;
-
-
-};
-console.log(" You High Score "+ name + hScore);
+console.log(" Your High Score "+ name + hScore);
 
 var highScore = localStorage.getItem("highscore");
   if (highScore === null) {

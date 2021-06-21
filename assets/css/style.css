@@ -50,7 +50,11 @@ margin-top: 10px;
     background-color: aquamarine;
 }
 
+p {
+    font-size: 22px;
+font-weight: bolder;
 
+}
 
 h1 {
     color:teal;
