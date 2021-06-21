@@ -1,12 +1,18 @@
-const start = document.getElementById('start');
+const start = document.getElementById("start");
 const startgame = document.getElementById("startgame");
-const nextButton = document.getElementById('next-btn');
-const questionsContainerEl = document.getElementById('questionsCon');
-const questionElement = document.getElementById('question');
-const answerButtonsElement = document.getElementById('answer-btns');
-var score = 0;
+const nextButton = document.getElementById("next-btn");
+const questionsContainerEl = document.getElementById("questionsCon");
+const questionElement = document.getElementById("question");
+const answerButtonsElement = document.getElementById("answer-btns");
+var hScore = 0;
+
+console.log(question);
+console.log(question.length);
+console.log(question[0]);
+console.log(question[5]);
+
 // Start Game Function
-start.addEventListener('click', startgame())
+start.addEventListener("click", startQuiz())
 // Question array
 const questions = [
     {
@@ -54,18 +60,18 @@ const questions = [
             { text: 'for loops', correct: false }
         ]
     }
-];
+   
+
 
  /* start quiz */
  function startQuiz() {
- 
-    startarea.classList.add('hide');
+    startarea.classList.add("hide");
     questionsRandom = question.sort(() => Math.random() - .5);
-    questionsContainerEl.classList.remove('hide');
+    questionsContainerEl.classList.remove("hide");
     currentQuestionsIndex = 0;
     nextQuestion();
-    nextButton.classList.remove('hide')
-
+    nextButton.classList.remove("hide")
+ 
     for(var i = 0; i < question.length; i++) {
         console.log(question[2].question)
  console.log(questions[2].answer[0].text)
@@ -74,11 +80,11 @@ const questions = [
  console.log(questions[2].answer[3].text)
  console.log(questions[2].answer[4].text)
  console.log(questions[2].answer[5].text)
-  
+    }
       //  console.log(question[i]  + answer [0]);
       }
       endQuiz();
-}
+
 
 
 
@@ -105,13 +111,67 @@ var endQuiz = function() {
   };
  
 // make questions
-// make answers
+  function showQuestion(questions) {
+    questionElement.innerText = questions.question
+    console.log(questions)
+    question.answers.forEach(answer => {
+      const button = document.createElement('button')
+      button.innerText = answer.text
+      button.classList.add('btn')
+      if (answer.correct) {
+        button.dataset.correct = answer.correct
+      }
+      button.addEventListener('click', selectAnswer)
+      answerButtonsElement.appendChild(button)
+    })
+}
+
 // check answer
+ var checkanswer = function() {
+    var scores = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
+  
+    return value;
+  }
+
+if (question === "right") {
+    console.log(" You are Correct!") ;
+  }
+  else if (question === "wrong") {
+    console.log("Sorry Incorrect");
+  }
+  
+
 // set local storage
 // get local storage
 // make high scores
+var playerName = function() {
+    var name = "";
+}
+var highScore = function() {
+  
+
+  var highScore = Math.floor(Math.random() 
+
+  return hScore;
+
+
+};
+console.log(" You High Score "+ name + hScore);
+
+var highScore = localStorage.getItem("highscore");
+  if (highScore === null) {
+    highScore = 0;
+  if correct}
+ hScore = Math.min(10, highScore);
+
 // clear high scores
-// -----------------------------------------*/
+function reset() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
 
 // Loop questions 
 for (var i = 0; i < questions.length; i++) {
