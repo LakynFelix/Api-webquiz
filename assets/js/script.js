@@ -61,67 +61,84 @@ const questions = [
         ]
     }
    
-
+// Start Game Function
+start.addEventListener("click", startQuiz())
 
  /* start quiz */
- function startQuiz() {
-    startarea.classList.add("hide");
-    questionsRandom = question.sort(() => Math.random() - .5);
-    questionsContainerEl.classList.remove("hide");
-    currentQuestionsIndex = 0;
-    nextQuestion();
-    nextButton.classList.remove("hide")
+//  function startQuiz() {
+//     startarea.classList.add("hide");
+//     questionsRandom = question.sort(() => Math.random() - .5);
+//     questionsContainerEl.classList.remove("hide");
+//     currentQuestionsIndex = 0;
+//     nextQuestion();
+//     nextButton.classList.remove("hide")
  
-    for(var i = 0; i < question.length; i++) {
-        console.log(question[2].question)
- console.log(questions[2].answer[0].text)
- console.log(questions[2].answer[1].text)
- console.log(questions[2].answer[2].text)
- console.log(questions[2].answer[3].text)
- console.log(questions[2].answer[4].text)
- console.log(questions[2].answer[5].text)
-    }
+//     for(var i = 0; i < question.length; i++) {
+//         console.log(question[2].question)
+//  console.log(question[2].answer[0].text)
+//  console.log(question[2].answer[1].text)
+//  console.log(question[2].answer[2].text)
+//  console.log(question[2].answer[3].text)
+//  console.log(question[2].answer[4].text)
+//  console.log(question[2].answer[5].text)
+//     }
       //  console.log(question[i]  + answer [0]);
-      }
-      endQuiz();
+    //   }
+    //   endQuiz();
 
+      start.addEventListener("click",startGame);
+
+ 
+     
 
 
 
 
 // start time section // 
-const startimer 
- const gametime = "2:00min";
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+        if(seconds === 0) {
+            alert(" Your Game Over!")
+        }
+    }, 1000);
+}
+ const time = "2:00min";
  
-
-
-// End time //
-
-
-if (startimer === 0) {
-    console.log(" Time is up");
-    elseif 
-        console.log(" Your Time Remaining is"+ "time");
-      }
-
-
+ startButton.addEventListener("click",startGame);
+ startButton.addEventListener("click", function() {
+     var twoMin = 60 * 2,
+         display = document.querySelector("#time");
+     startTimer(twoMin, display);
+});
 //end quiz //
 var endQuiz = function() {
-    window.alert("The game has now ended. Let's see how you did!");
+    console.log("Game Over");
   };
  
 // make questions
-  function showQuestion(questions) {
-    questionElement.innerText = questions.question
-    console.log(questions)
+  function showQuestion(question) {
+    questionElement.innerText = question.question
+    console.log(question)
     question.answers.forEach(answer => {
-      const button = document.createElement('button')
+      const button = document.createElement("button")
       button.innerText = answer.text
-      button.classList.add('btn')
+      button.classList.add("btn")
       if (answer.correct) {
         button.dataset.correct = answer.correct
       }
-      button.addEventListener('click', selectAnswer)
+      button.addEventListener("click", selectAnswer)
       answerButtonsElement.appendChild(button)
     })
 }
@@ -142,6 +159,21 @@ if (question === "right") {
   
 
 // set local storage
+
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    console.log(question)
+    question.answers.forEach(answer => {
+      const button = document.createElement("button")
+      button.innerText = answer.text
+      button.classList.add("btn")
+      if (answer.correct) {
+        button.dataset.correct = answer.correct
+      }
+      button.addEventListener("click", selectAnswer)
+      answerButtonsElement.appendChild(button)
+    })
+}
 // get local storage
 // make high scores
 var playerName = function() {
@@ -174,21 +206,18 @@ function reset() {
 }
 
 // Loop questions 
-for (var i = 0; i < questions.length; i++) {
+function questionsloop(question) {
 
-  var answer = confirm(questions[i].question);
-  
-  if (
-    (answer === right && questions[i].answers === "right") ||
-    (answer === wrong && questions[i].answers === "wrong")
-  ) {
-    // Increase score
-    score++;
-    // Alert the user
-    alert('Correct!');
-  } else {
-    alert('Wrong!');
-  }
-}
+    for (var i = 0; i < question.length; i ++);
+    question.innerText("#question");
+    if (answer.correct) {
+        button.dataset.correct = answer.correct
+        score ++;
+    }
+    score.innerText(" Your Correct")
+
 // Show total at end
-alert('You got ' + score + '/' + questions.length);
+alert('You got ' + hScore + '/' + question.length);
+
+
+}
