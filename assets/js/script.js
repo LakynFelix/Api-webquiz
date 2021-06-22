@@ -5,6 +5,10 @@ const questionsContainerEl = document.getElementById("questionsCon");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-btns");
 var hScore = 0;
+console.log(question);
+console.log(question.length);
+console.log(question[0]);
+console.log(question[5]);
 
 // Question array
 const questions = [
@@ -60,29 +64,21 @@ start.addEventListener("click", startQuiz)
 //  /* start quiz */
 function startQuiz() {
     startgame.classList.add("hide");
-    questionsRandom = questions.sort(() => Math.random() - .5);
+    questionRandom = questions.sort(() => Math.random() - .5);
     questionsContainerEl.classList.remove("hide");
     currentQuestionsIndex = 0;
     nextButton.classList.remove("hide")
 
     for (var i = 0; i < question.length; i++) {
-        console.log(question[2].question)
-        console.log(question[2].answer[0].text)
-        console.log(question[2].answer[1].text)
-        console.log(question[2].answer[2].text)
-        console.log(question[2].answer[3].text)
-        console.log(question[2].answer[4].text)
-        console.log(question[2].answer[5].text)
+        console.log(question[i] + answer[0]);
     }
-    console.log(question[i] + answer[0]);
-}
-
-console.log(question);
-console.log(question.length);
-console.log(question[0]);
-console.log(question[5]);
-
-
+        console.log(questions[2].question)
+        console.log(questions[2].answers[0].text)
+        console.log(questions[2].answers[1].text)
+        console.log(questions[2].answers[2].text)
+        console.log(questions[2].answers[3].text)
+       
+    }
 
 // start time section // 
 function startTimer(duration, display) {
