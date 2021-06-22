@@ -45,6 +45,19 @@ font-size: 30px;
 margin-top: 10px;
 }
 
+#time {
+
+margin-left: 20px;
+color: aquamarine;
+
+}
+
+
+#text {
+
+    margin-left: 20px;
+    color: aquamarine;
+}
 
 .answers-btns {
     background-color: aquamarine;

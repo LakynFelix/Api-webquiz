@@ -80,6 +80,7 @@ function startQuiz() {
         console.log(question[2].answer[5].text)
     }
     console.log(question[i] + answer[0]);
+}
 
 // start time section // 
 function startTimer(duration, display) {
@@ -197,6 +198,4 @@ function questionsloop(question) {
 
     // Show total at end
     alert('You got ' + hScore + '/' + question.length);
-
-
 }
