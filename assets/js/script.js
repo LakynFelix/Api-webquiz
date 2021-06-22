@@ -6,11 +6,6 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-btns");
 var hScore = 0;
 
-console.log(question);
-console.log(question.length);
-console.log(question[0]);
-console.log(question[5]);
-
 // Question array
 const questions = [
     {
@@ -81,6 +76,13 @@ function startQuiz() {
     }
     console.log(question[i] + answer[0]);
 }
+
+console.log(question);
+console.log(question.length);
+console.log(question[0]);
+console.log(question[5]);
+
+
 
 // start time section // 
 function startTimer(duration, display) {
