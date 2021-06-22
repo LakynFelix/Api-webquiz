@@ -11,8 +11,6 @@ console.log(question.length);
 console.log(question[0]);
 console.log(question[5]);
 
-// Start Game Function
-start.addEventListener("click", startQuiz())
 // Question array
 const questions = [
     {
@@ -59,38 +57,33 @@ const questions = [
             { text: 'Java Script', correct: false },
             { text: 'for loops', correct: false }
         ]
-    }
-   
+    }]
+
 // Start Game Function
-start.addEventListener("click", startQuiz())
+start.addEventListener("click", startQuiz)
 
 //  /* start quiz */
-  function startQuiz() {
-     startarea.classList.add("hide");
-     questionsRandom = question.sort(() => Math.random() - .5);
-     questionContainerEl.classList.remove("hide");
-     currentQuestionsIndex = 0;
-     nextQuestion();
-     nextButton.classList.remove("hide")
- 
-     for(var i = 0; i < question.length; i++) {
-        console.log(question[2].question)
-  console.log(question[2].answer[0].text)
-  console.log(question[2].answer[1].text)
-  console.log(question[2].answer[2].text)
-  console.log(question[2].answer[3].text)
-  console.log(question[2].answer[4].text)
-  console.log(question[2].answer[5].text)
-     }
- console.log(question[i]  + answer [0]);
-   }
-  endQuiz();
+function startQuiz() {
+    startgame.classList.add("hide");
+    questionsRandom = questions.sort(() => Math.random() - .5);
+    questionsContainerEl.classList.remove("hide");
+    currentQuestionsIndex = 0;
+    nextButton.classList.remove("hide")
 
-      start.addEventListener("click",startGame);
+    for (var i = 0; i < question.length; i++) {
+        console.log(question[2].question)
+        console.log(question[2].answer[0].text)
+        console.log(question[2].answer[1].text)
+        console.log(question[2].answer[2].text)
+        console.log(question[2].answer[3].text)
+        console.log(question[2].answer[4].text)
+        console.log(question[2].answer[5].text)
+    }
+    console.log(question[i] + answer[0]);
 
 // start time section // 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    var timer = duration, minutes, seconds; 
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -103,84 +96,85 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-        if(seconds === 0) {
+        if (seconds === 0) {
             alert(" Your Time is up!")
         }
     }, 1000);
 }
- const time = "2:00min";
- 
- startButton.addEventListener("click",startGame);
- startButton.addEventListener("click", function() {
-     var twoMin = 60 * 2,
-         display = document.querySelector("#time");
-     startTimer(twoMin, display);
+const time = "2:00min";
+
+start.addEventListener("click", function () {
+    var twoMin = 60 * 2,
+        display = document.querySelector("#time");
+    startTimer(twoMin, display);
 });
 //end quiz //
-var endQuiz = function() {
+var endQuiz = function () {
     console.log("Game Over");
-  };
- 
+};
+
 // make questions
-  function showQuestion(question) {
+function showQuestion(question) {
     questionElement.innerText = question.question
     console.log(question)
     question.answers.forEach(answer => {
-      const button = document.createElement("button")
-      button.innerText = answer.text
-      button.classList.add("btn")
-      if (answer.correct) {
-        button.dataset.correct = answer.correct
-      }
-      button.addEventListener("click", selectAnswer)
-      answerButtonsElement.appendChild(button)
+        const button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button)
     })
 }
 
 // check answer
- var checkanswer = function() {
+var checkanswer = function () {
     var scores = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
-  
+
     return value;
-  }
+}
 
 if (question === "right") {
-    console.log(" You are Correct!") ;
-  }
-  else if (question === "wrong") {
+    console.log(" You are Correct!");
+}
+else if (question === "wrong") {
     console.log("Sorry Incorrect");
-  }
-  
+}
+
 // set local storage
 
 function showQuestion(question) {
     questionElement.innerText = question.question
     console.log(question)
     question.answers.forEach(answer => {
-      const button = document.createElement("button")
-      button.innerText = answer.text
-      button.classList.add("btn")
-      if (answer.correct) {
-        button.dataset.correct = answer.correct
-      }
-      button.addEventListener("click", selectAnswer)
-      answerButtonsElement.appendChild(button)
+        const button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button)
     })
 }
 // get local storage
 // make high scores
-var playerName = function() {
+var playerName = function () {
     var name = "";
 }
 
-console.log(" Your High Score "+ name + hScore);
+console.log(" Your High Score " + name + hScore);
 
 var highScore = localStorage.getItem("highscore");
-  if (highScore === null) {
+if (highScore === null) {
     highScore = 0;
-  if correct}
- hScore = Math.min(10, highScore);
 
+    //   if correct
+
+    //  hScore = Math.min(10, highScore);
+}
 // clear high scores
 function reset() {
     clearStatusClass(document.body)
@@ -193,16 +187,16 @@ function reset() {
 // Loop questions 
 function questionsloop(question) {
 
-    for (var i = 0; i < question.length; i ++);
+    for (var i = 0; i < question.length; i++);
     question.innerText("#question");
     if (answer.correct) {
         button.dataset.correct = answer.correct
-        score ++;
+        score++;
     }
     score.innerText(" Your Correct")
 
-// Show total at end
-alert('You got ' + hScore + '/' + question.length);
+    // Show total at end
+    alert('You got ' + hScore + '/' + question.length);
 
 
 }
